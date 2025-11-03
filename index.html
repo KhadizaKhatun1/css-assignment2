@@ -15,12 +15,14 @@
             box-sizing: border-box;
         }
         body {
+            /* max-width: 1450px; */
             font-family: 'Inter', sans-serif;
         }
         .header-container {
             background-color: #F0FDF4;
             height: 650px;
             padding: 40px 0;
+            max-width: 1450px;
         }
         .nav-container{
             display: flex;
@@ -48,6 +50,11 @@
         }
         .menus li a:hover{
             color: #06C167;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
         }
         /* hero */
         .hero{
@@ -121,6 +128,7 @@
           margin: 0 auto; 
           padding: 70px;
           box-sizing: border-box;
+          
         }
         .cart-container{
            display: flex;
@@ -212,7 +220,7 @@
         }
         .veggie-button-icon{
             position: absolute;
-            left: 150px;
+            left: 165px;
         }
         .veggie-picture{
             background-color: #e8f5e9;
@@ -248,7 +256,7 @@
         }
         .discover-button-icon{
             position: absolute;
-            left: 130px;
+            left: 150px;
         }
         /* variety food section*/
         .variety-foods-section {
@@ -320,7 +328,6 @@
                 
                 
             }
-            
             .prices{
                 display: flex;
                 justify-content: center;
@@ -357,14 +364,14 @@
             margin: 0 auto;
             padding: 0 100px;
             top: 190px;
-            padding: 170px;
-            width: 100%;
-            height: 400px;
+            /* padding: 170px; */
+            /* width: 100%; */
+            height: 500px;
             background-image: url('./media/veggie-background.png');
             background-size: cover;  
             background-position: center;
             background-repeat: no-repeat;
-            padding: 0 100px;
+            /* padding: 0 50px; */
         }
         .veggie-foods-container::before{
             content: "";
@@ -409,11 +416,12 @@
             position: relative;
             top: 150px;
             left: 70px;
+            margin-right: 70px;
             
         }
         .footer-section{
             display: flex;
-            gap: 225px;
+            gap: 200px;
         }
         .foodies{
             padding-bottom:30px;
@@ -466,7 +474,382 @@
             border: none;
             background-color: #F0F1EC;
         }
-            
+        /*mobile responsiveness  */
+            @media (max-width: 768px) {
+            .header-container {
+                background-color: #F0FDF4;
+                padding: 20px;
+                height: auto;
+                border: none;
+            }
+
+            .nav-container {
+                padding: 10px 20px;
+            }
+
+            .menu-container {
+                display: none;
+                flex-direction: column;
+                background-color: #F0FDF4;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 20px 0;
+                border-top: 1px solid #ccc;
+                text-align: center;
+            }
+
+            .menus {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            /* Toggle Menu Open */
+            .menu-container.active {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+
+            .hero-para {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .hero-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .button-icon {
+                left: unset;
+                margin-left: 10px;
+                position: relative;
+            }
+
+            .hero-images {
+                /* margin-top: 20px; */
+                text-align: center;
+            }
+
+            .hero-images img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .ratings, .quality-box {
+                position: static;
+                top: -100px;
+                margin: 5px auto;
+            }
+            .ratings{
+                position: absolute;
+                margin-top:400px ;
+                margin-left: 100px;
+            }
+            .quality-box{
+                position: absolute;
+                margin-top:500px ;
+                top:-150px;
+                left: 0px;
+                right: 0px;
+            }
+
+            .logoipsum {
+                flex-direction: column;
+                gap: 20px;
+                top: 650px;
+            }
+
+            /* cart container */
+           .cart-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            justify-items: center;
+            align-items: center;
+            top: 20;
+            padding: 40px 0;
+            box-shadow: none;
+        }
+
+        .cart {
+            flex-direction: column;
+            text-align: center;
+            background-color: #fff;
+            padding: 25px 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cart img {
+            width: 100px;
+            height: 100px;
+            background-color: #E8FAEF; /* soft green background */
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .cart-details h4 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .cart-details p {
+            font-size: 13px;
+            color: gray;
+        }
+
+        .section-container {
+            padding: 40px 20px;
+        }
+        /* healthy food container */
+        .healthyfood-container {
+            flex-direction: column; 
+            text-align: center;
+            top: 200px;
+            padding: 0 10px;
+        }
+
+        .healthy-image {
+            padding: 20px;
+        }
+
+        .healthy-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .food-promo-title {
+            font-size: 28px; 
+            line-height: 1.2;
+        }
+
+        .benifits-list {
+            justify-content: center;
+        }
+
+        .benifits-list img {
+            width: 18px;
+        }
+
+        .benifits-list p {
+            font-size: 14px;
+        }
+        /* veggie food */
+         .veggie-container {
+                flex-direction: column-reverse;  
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+                margin: 50px auto;
+                gap: 30px;
+            }
+
+        .veggie-title {
+                font-size: 32px;
+                line-height: 1.3;
+                margin-bottom: 20px;
+            }
+
+        .stars {
+                font-size: 14px;
+            }
+
+        .veggie-carts {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+        .product {
+                font-size: 28px;
+            }
+
+        .veggie-button {
+                width: 180px;
+                font-size: 14px;
+                padding: 12px;
+                margin: 0 auto;
+            }
+
+        .veggie-picture {
+                width: 100%;
+                padding: 15px 10px 30px 10px;
+            }
+
+        .veggie-picture img {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            /* variety food */
+         .variety-foods-section {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+                gap: 20px;
+            }
+
+        .veggie-forever {
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+        .veggie-forever-title {
+                font-size: 22px;
+            }
+
+        .veggie-forever-para {
+                font-size: 14px;
+            }
+
+        .discover-button {
+                justify-content: center;
+                font-size: 14px;
+            }
+
+        .feature-title {
+                font-size: 26px;
+            }
+
+        .food-features {
+                margin-bottom: 30px;
+            }
+
+        .variety-foods-container {
+                padding: 0 15px;
+            }
+        /* popular section */
+        .popular-products-container {
+                top: 100px;
+                padding: 30px 20px;
+            }
+
+        .popular-product-details{
+                text-align: center;
+                margin-top: 200px;
+            }
+        .popular-product-title{
+                font-size: 32px;
+            }
+
+        .popular-product-carts {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+                
+            }
+
+        .popular-product-cart {
+                width: 90%;
+                max-width: 350px;
+                padding: 30px 20px;
+            }
+
+        .popular-image img {
+                width: 140px;
+                height: 140px;
+            }
+
+        .f-type-name {
+                font-size: 18px;
+            }
+
+        .prices {
+                font-size: 14px;
+            }
+
+        .buy-button {
+                width: 150px;
+                font-size: 14px;
+                padding: 8px;
+            }
+
+        .popular-product-para {
+                font-size: 14px;
+            }
+        /* veggie background and button */
+        .veggie-foods-container {
+                height: 400px;
+                padding: 0 20px;
+            }
+
+        .veggie-food-promo {
+                font-size: 28px;
+                line-height: 1.3;
+                margin-bottom: 20px;
+                padding-left: 0px;
+            }
+
+        .foods-button {
+                width: auto;
+                padding: 12px 25px;
+            }
+        /* footer */
+        .footer-container {
+                left: 0;
+                margin: 0;
+                top: 150px;
+                padding: 30px 20px;
+            }
+
+        .footer-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 40px;
+            }
+
+        .foodies-title {
+                font-size: 28px;
+            }
+
+        .about {
+                font-size: 20px;
+            }
+
+        .touch-title {
+                font-size: 20px;
+            }
+
+        .email-container {
+                align-items: center;
+            }
+
+        .email, .subscribe-button {
+                width: 80%;
+                max-width: 300px;
+            }
+
+        .media-icons {
+                justify-content: center;
+            }
+
+        .serve-details a {
+                font-size: 15px;
+            }
+
+         }
+
+        
+
     </style>
 </head>
 <body>
@@ -476,6 +859,10 @@
             <h3 class="nav-title">
                 Foodies
             </h3>
+            <!-- Bars icon -->
+            <div class="menu-icon" id="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <div class="menu-container">
                 <ul class="menus">
                     <li><a href="#">Home </a></li>
@@ -503,7 +890,7 @@
                 </div>
                 <!-- logoipsum start -->
             <div class="logoipsum">
-                <img src="./media/logoipsum.png" alt="logoipsum">
+                <img src="./media/logoipsum1.png" alt="logoipsum">
                 <img src="./media/logoipsum2.png" alt="logoipsum">
                 <img src="./media/logoipsum3.png" alt="logoipsum">
             </div>
